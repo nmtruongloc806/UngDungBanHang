@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentDangKy"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/edthoten"
+        android:hint="Họ Tên"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/edtsodienthoai"
+        android:inputType="number"
+        android:layout_below="@+id/edthoten"
+        android:hint="Số Điện Thoại"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/edtmatkhau"
+        android:layout_below="@id/edtsodienthoai"
+        android:hint="Mật Khẩu"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/edtdiachi"
+        android:layout_below="@id/edtmatkhau"
+        android:hint="Địa Chỉ"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/edtngaysinh"
+        android:layout_below="@id/edtdiachi"
+        android:focusable="false"
+        android:hint="Ngày Sinh"/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtngaysinh"
+        android:id="@+id/cbnam"
+        android:layout_margin="10dp"
+        android:text="Nam"
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtngaysinh"
+        android:id="@+id/cbnu"
+        android:layout_toRightOf="@id/cbnam"
+        android:layout_margin="10dp"
+        android:text="Nữ"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbnam"
+        android:layout_margin="10dp"
+        android:text="Đăng Ký"
+        android:id="@+id/btnDangKy"
+        android:background="#E11616"
+        />
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  >
+    <CheckBox
+        android:id="@+id/cbgiohang"
+        android:layout_width="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_toRightOf="@+id/cbgiohang"
+        android:id="@+id/image_hinhgiohang"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:background="@drawable/truck"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_toRightOf="@+id/image_hinhgiohang"
+        android:id="@+id/txttengiohang"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên Sản Phẩm"/>
+    <TextView
+        android:layout_below="@+id/txttengiohang"
+        android:id="@+id/txtgiagiohang"
+        android:layout_toRightOf="@+id/image_hinhgiohang"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giá Sản Phẩm"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/cbgiohang"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toRightOf="@+id/btnsoluong"
+        android:id="@+id/btncong"
+        android:text="+"
+        android:layout_margin="5dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/cbgiohang"
+        android:id="@+id/btntru"
+        android:layout_toLeftOf="@+id/btnsoluong"
+        android:text="-"
+        android:layout_margin="5dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:id="@+id/btnsoluong"
+        android:layout_below="@+id/cbgiohang"
+        android:layout_centerInParent="true"
+        android:layout_margin="5dp"
+        />
+</RelativeLayout>

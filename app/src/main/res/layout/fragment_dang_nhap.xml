@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentDangNhap"
+    >
+    <!-- TODO: Update blank fragment layout -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/edtsodienthoai"
+        android:inputType="number"
+        android:hint="Số Điện Thoại"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/edtmatkhau"
+        android:layout_below="@+id/edtsodienthoai"
+        android:hint="Mật Khẩu"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtmatkhau"
+        android:layout_margin="10dp"
+        android:text="Đăng Nhập"
+        android:id="@+id/btnDangNhap"
+        android:background="#E11616"
+        />
+
+</RelativeLayout>

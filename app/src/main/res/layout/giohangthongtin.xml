@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="2"
+   >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/edthoten"
+            android:hint="Họ Tên"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/edtsodienthoai"
+            android:layout_below="@+id/edthoten"
+            android:hint="Số Điện Thoại"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/edtDiaChi"
+            android:layout_below="@id/edtsodienthoai"
+            android:hint="Địa Chỉ"/>
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/btnHoanTat"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtDiaChi"
+            android:layout_margin="20dp"
+            android:text="Hoàn Tất"
+            android:padding="10dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

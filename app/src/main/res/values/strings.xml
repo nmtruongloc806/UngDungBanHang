@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">appBanHang</string>
+    <string name="title_home">Trang Chủ</string>
+    <string name="title_favorite">Yêu Thích</string>
+    <string name="title_me">Tôi</string>
+    <string name="title_dangnhap">Đăng Nhập</string>
+    <string name="title_dangky">Đăng Ký</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

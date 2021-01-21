@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="#c0c0c0"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/txtuser"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/user"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txthoten"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/txtuser"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="Họ và Tên"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtsodienthoai"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:layout_toRightOf="@+id/txtuser"
+            android:layout_below="@+id/txthoten"
+            android:text="Số Điện Thoại"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/txtnext"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/next"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/txtXemTT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/truck"
+        android:drawableLeft="@drawable/truck"
+        android:padding="20dp"
+        android:text="Xem Tiến Trình Giao Hàng"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:drawablePadding="10dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:drawableEnd="@drawable/next"
+        android:drawableRight="@drawable/next"
+        android:background="#c0c0c0"/>
+    <TextView
+        android:id="@+id/txtTTLH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/contact"
+        android:drawableLeft="@drawable/contact"
+        android:padding="20dp"
+        android:text="Thông Tin Liên Hệ"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:drawablePadding="10dp"
+        android:textStyle="bold"
+        android:drawableEnd="@drawable/next"
+        android:drawableRight="@drawable/next"
+        android:background="#c0c0c0"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="20dp"
+        android:id="@+id/btnDangXuat"
+        android:text="Đăng Xuất"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:background="#c0c0c0"
+        />
+
+</LinearLayout>
