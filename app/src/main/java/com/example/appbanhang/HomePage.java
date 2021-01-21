@@ -38,7 +38,7 @@ public class HomePage extends Fragment {
     public static String ten;
     TextView txtSearch;
     GridView gridView;
-    ArrayList<ThuongHieu> RecipeImageUrl= new ArrayList<ThuongHieu>();
+    ArrayList<ThuongHieu> thuongHieuArrayList= new ArrayList<ThuongHieu>();
     DatabaseReference reference;
     ThuongHieu thuongHieu;
     CustomAdapter customAdapter;
@@ -52,7 +52,7 @@ public class HomePage extends Fragment {
         reference = FirebaseDatabase.getInstance().getReference().child("thuonghieu");
         /// lắng nghe sự thay đổi của data trên firebase
         DataFromFirebaseListener();
-        customAdapter = new CustomAdapter(getActivity(),RecipeImageUrl);
+        customAdapter = new CustomAdapter(getActivity(), thuongHieuArrayList);
         gridView.setAdapter(customAdapter);
         txtSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +67,7 @@ public class HomePage extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                // Toast.makeText(getActivity(),"You clicked" + position,Toast.LENGTH_LONG).show();
                 reference = FirebaseDatabase.getInstance().getReference("thuonghieu");
-                ThuongHieu thuongHieuItem = RecipeImageUrl.get(position);
+                ThuongHieu thuongHieuItem = thuongHieuArrayList.get(position);
                 ten = thuongHieuItem.getTenTH();
                 Intent intent = new Intent(getActivity(),SanPhamPage.class);
                 startActivity(intent);
@@ -87,14 +87,14 @@ public class HomePage extends Fragment {
                     String hinhTH = ds.child("hinhTH").getValue(String.class);
                     String tenTH = ds.child("tenTH").getValue(String.class);
                     AtomicBoolean isDaTonTai = new AtomicBoolean(false);
-                    RecipeImageUrl.forEach(thuongHieu -> {
+                    thuongHieuArrayList.forEach(thuongHieu -> {
                         if(thuongHieu.getID() == Integer.parseInt(key)){
                             isDaTonTai.set(true);
                         }
                     });
                     if(isDaTonTai.get() == false){
                         ThuongHieu thuongHieu = new ThuongHieu(Integer.parseInt(key) , tenTH, hinhTH);
-                        RecipeImageUrl.add(thuongHieu);
+                        thuongHieuArrayList.add(thuongHieu);
                     }
                 }
                 customAdapter.notifyDataSetChanged();

@@ -23,18 +23,18 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class CustomAdapter extends BaseAdapter {
-    ArrayList<ThuongHieu> imageUrl;
+    ArrayList<ThuongHieu> thuongHieuArrayList;
     @Override
     public int getCount() {
-        return this.imageUrl.size();
+        return this.thuongHieuArrayList.size();
     }
     CustomAdapter(Context context, ArrayList<ThuongHieu> RecipeImageUrl) {
         this.context = context;
-        this.imageUrl = RecipeImageUrl;
+        this.thuongHieuArrayList = RecipeImageUrl;
     }
     @Override
     public Object getItem(int position) {
-        return imageUrl.get(position);
+        return thuongHieuArrayList.get(position);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class CustomAdapter extends BaseAdapter {
         ImageView imageView = convertView.findViewById(R.id.image_view);
 
         /// url của firebase
-        String url = imageUrl.get(position).HinhTH;
+        String url = thuongHieuArrayList.get(position).HinhTH;
         Log.d("MTL", "getView: " + url);
         /// get image url firebase
 //        imageView.setImageDrawable(LoadImageFromWebOperations(url));
