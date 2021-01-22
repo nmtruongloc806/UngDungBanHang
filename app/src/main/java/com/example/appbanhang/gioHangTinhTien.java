@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,25 +31,25 @@ public class gioHangTinhTien extends Fragment {
     ListView lvgh;
    // ArrayList<SanPham> sanPhams = new ArrayList<SanPham>();
     gioHangAdapter gioHangAdapter;
-    public TextView getTxtChecked() {
+    public ImageView getTxtChecked() {
         return txtChecked;
     }
 
-    public void setTxtChecked(TextView txtChecked) {
+    public void setTxtChecked(ImageView txtChecked) {
         this.txtChecked = txtChecked;
     }
 
-    public TextView getTxtUnchecked() {
+    public ImageView getTxtUnchecked() {
         return txtUnchecked;
     }
 
-    public void setTxtUnchecked(TextView txtUnchecked) {
+    public void setTxtUnchecked(ImageView txtUnchecked) {
         this.txtUnchecked = txtUnchecked;
     }
 
-    TextView txtChecked, txtUnchecked;
+    ImageView txtChecked, txtUnchecked;
     Toolbar toolbar;
-    public  gioHangTinhTien(TextView txtChecked, TextView txtUnchecked, Toolbar toolbar){
+    public  gioHangTinhTien(ImageView txtChecked, ImageView txtUnchecked, Toolbar toolbar){
         this.txtChecked = txtChecked;
         this.txtUnchecked = txtUnchecked;
         this.toolbar = toolbar;
@@ -73,23 +74,23 @@ public class gioHangTinhTien extends Fragment {
                     fragmentTransaction.addToBackStack("fragment");
                     fragmentTransaction.commit();
                     txtChecked.setBackgroundResource(R.drawable.circle);
-                    txtChecked.setText(haha);
+//                    txtChecked.setText(haha);
                     txtUnchecked.setBackgroundResource(R.drawable.circle);
-                    txtUnchecked.setText("");
-                    toolbar.setNavigationIcon(R.drawable.back_icon);
-                    toolbar.setTitle("Thông Tin Mua Hàng");
-                    toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            getActivity().onBackPressed();
-                            toolbar.setTitle("Giỏ Hàng");
-                            toolbar.setNavigationIcon(null);
-                            txtChecked.setBackgroundResource(R.drawable.circle);
-                            txtChecked.setText("");
-                            txtUnchecked.setBackgroundResource(R.drawable.circle2);
-                            txtUnchecked.setText("");
-                        }
-                    });
+//                    txtUnchecked.setText("");
+//                    toolbar.setNavigationIcon(R.drawable.back_icon);
+//                    toolbar.setTitle("Thông Tin Mua Hàng");
+//                    toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            getActivity().onBackPressed();
+//                            toolbar.setTitle("Giỏ Hàng");
+//                            toolbar.setNavigationIcon(null);
+//                            txtChecked.setBackgroundResource(R.drawable.circle);
+////                            txtChecked.setText("");
+//                            txtUnchecked.setBackgroundResource(R.drawable.circle2);
+////                            txtUnchecked.setText("");
+//                        }
+//                    });
                 }else{
                     Intent intent = new Intent(getActivity(),FormDNDK.class);
                     startActivity(intent);

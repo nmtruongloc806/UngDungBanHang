@@ -70,6 +70,6 @@
         android:layout_alignParentBottom="true"
         android:text="Đăng Ký"
         android:id="@+id/btnDangKy"
-        android:backgroundTint="#9484E7"
+        android:backgroundTint="@color/purple_button"
         />
 </RelativeLayout>

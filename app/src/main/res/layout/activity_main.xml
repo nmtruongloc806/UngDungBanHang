@@ -16,6 +16,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_navigation_menu"
+        android:background="@color/purple_button"
+        android:backgroundTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
         />
 
 </RelativeLayout>

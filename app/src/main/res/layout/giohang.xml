@@ -4,58 +4,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:weightSum="2">
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/toolbarGioHang"
-        app:title="Giỏ Hàng"
-        android:gravity="center"
-        android:background="#f00"/>
+    android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_height="100dp"
         android:gravity="center"
-        android:background="#00ff00"
         >
-        <TextView
+        <LinearLayout
+            android:id="@+id/view_checked"
             android:layout_width="wrap_content"
-            android:id="@+id/txtChecked"
             android:layout_height="wrap_content"
-            android:background="@drawable/circle"
-            android:textStyle="bold"
-            android:textSize="13sp"
-            android:gravity="center"
             android:layout_alignParentStart="true"
-            android:layout_centerInParent="true"/>
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/txtChecked"
+                android:src="@drawable/circle"
+                android:layout_gravity="center"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/txtChecked"
+                android:text="Giỏ hàng"
+                />
+        </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="- - - - - - - -"
-            android:layout_toRightOf="@+id/txtChecked"
+            android:text="--------"
+            android:layout_toRightOf="@+id/view_checked"
             android:id="@+id/txt...."
             android:textSize="30sp"
             android:textStyle="bold"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textColor="#000000"
+            android:textColor="#5E5E5E"
+            android:paddingBottom="20dp"
             android:layout_centerInParent="true"/>
-        <TextView
+
+        <LinearLayout
+            android:id="@+id/view_unchecked"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtUnchecked"
-            android:textStyle="bold"
-            android:textSize="40sp"
-            android:gravity="center"
             android:layout_toRightOf="@+id/txt...."
-            android:background="@drawable/circle2"
-            android:layout_centerInParent="true"/>
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/txtUnchecked"
+                android:layout_gravity="center"
+                android:background="@drawable/circle2"
+                android:layout_centerInParent="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Thông tin"
+                />
+        </LinearLayout>
+
+
     </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/darker_gray" />
     <FrameLayout
         android:id="@+id/framelayoutGioHang"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"/>
+        android:layout_height="match_parent"/>
 </LinearLayout>

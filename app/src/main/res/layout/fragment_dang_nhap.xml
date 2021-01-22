@@ -31,7 +31,7 @@
         android:text="Đăng Nhập"
         android:layout_alignParentBottom="true"
         android:id="@+id/btnDangNhap"
-        android:backgroundTint="#9484E7"
+        android:backgroundTint="@color/purple_button"
         />
 
 </RelativeLayout>

@@ -1,21 +1,21 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:weightSum="2">
+    >
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="10dp"
-        android:layout_weight="1.5"
+        android:layout_marginBottom="100dp"
         android:id="@+id/listGioHang"
         />
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -24,24 +24,27 @@
             android:text="Tổng Tiền"
             android:id="@+id/tongtien"
             android:layout_marginLeft="10dp"
-            android:textSize="20sp"
+            android:textSize="22sp"
+
+            android:layout_above="@id/txttongtien"
+            android:layout_marginBottom="5dp"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
-            android:text="Giá"
+            android:layout_marginBottom="10dp"
+            android:text="Giá: 0 VND"
             android:textStyle="bold"
-            android:layout_below="@+id/tongtien"
+            android:layout_alignParentBottom="true"
             android:id="@+id/txttongtien"
-            android:textSize="25sp"
+            android:textSize="22sp"
             />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
+            android:layout_alignParentBottom="true"
             android:text="Nhập Thông Tin"
             android:id="@+id/btnNhapThongTin"
             android:paddingTop="15dp"
@@ -50,9 +53,7 @@
             android:paddingRight="20dp"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:backgroundTint="#00ffff"
             />
     </RelativeLayout>
-</LinearLayout>
+</RelativeLayout>

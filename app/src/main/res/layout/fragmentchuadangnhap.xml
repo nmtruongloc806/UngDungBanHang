@@ -1,61 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
-   <TextView
-       android:id="@+id/txtDNDK"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-        android:drawableStart="@drawable/user"
-       android:drawableLeft="@drawable/user"
-       android:padding="20dp"
-       android:text="Đăng nhập/Đăng ký"
-       android:gravity="center_vertical"
-       android:textSize="20sp"
-       android:drawablePadding="30dp"
-       android:textStyle="bold"
-       android:drawableEnd="@drawable/next"
-       android:drawableRight="@drawable/next"
-       android:background="#c0c0c0"/>
-   <TextView
-       android:id="@+id/txtXemTT"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:drawableStart="@drawable/donmua"
-       android:drawableLeft="@drawable/donmua"
-       android:padding="20dp"
-       android:text="Đơn Mua"
-       android:gravity="center_vertical"
-       android:textSize="20sp"
-       android:drawablePadding="10dp"
-       android:textStyle="bold"
-       android:layout_marginTop="40dp"
-       android:drawableEnd="@drawable/next"
-       android:drawableRight="@drawable/next"
-       android:background="#c0c0c0"/>
+    android:background="#c0c0c0"
+    android:orientation="vertical">
 
-   <TextView
-       android:id="@+id/txtTTLH"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:drawableStart="@drawable/contact"
-       android:drawableLeft="@drawable/contact"
-       android:padding="20dp"
-       android:text="Thông Tin Liên Hệ"
-       android:gravity="center_vertical"
-       android:textSize="20sp"
-       android:drawablePadding="10dp"
-       android:textStyle="bold"
-       android:drawableEnd="@drawable/next"
-       android:drawableRight="@drawable/next"
-       android:background="#c0c0c0"/>
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_marginTop="40dp"
-       android:background="#c0c0c0"
-       />
+    <TextView
+        android:id="@+id/txtDNDK"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:drawableStart="@drawable/user"
+        android:drawableEnd="@drawable/next"
+        android:drawablePadding="30dp"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:text="Đăng nhập/Đăng ký"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtXemTT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:drawableStart="@drawable/donmua"
+        android:drawableEnd="@drawable/next"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:text="Quản lý đơn hàng"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:drawableStart="@drawable/eye_icon"
+        android:drawableEnd="@drawable/next"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:text="Sản phẩm đã xem"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/txtTTLH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:drawableStart="@drawable/wallet_icon"
+        android:drawableEnd="@drawable/next"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:text="Ví điện tử"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:drawableStart="@drawable/info_app"
+        android:drawableEnd="@drawable/next"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:text="Thông tin ứng dụng"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:drawableStart="@drawable/info_contact"
+        android:drawableEnd="@drawable/next"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:text="Thông tin liên hệ"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/support"
+        android:drawableEnd="@drawable/next"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:text="Hỗ trợ"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:background="#c0c0c0" />
 
 </LinearLayout>

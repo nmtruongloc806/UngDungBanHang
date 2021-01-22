@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,30 +24,30 @@ public class GioHangPage extends Fragment {
 
     }
 
-    public TextView getTxtChecked() {
+    public ImageView getTxtChecked() {
         return txtChecked;
     }
 
-    public void setTxtChecked(TextView txtChecked) {
+    public void setTxtChecked(ImageView txtChecked) {
         this.txtChecked = txtChecked;
     }
 
-    public TextView getTxtUnchecked() {
+    public ImageView getTxtUnchecked() {
         return txtUnchecked;
     }
 
-    public void setTxtUnchecked(TextView txtUnchecked) {
+    public void setTxtUnchecked(ImageView txtUnchecked) {
         this.txtUnchecked = txtUnchecked;
     }
     Toolbar toolbarGioHang;
-    TextView txtChecked, txtUnchecked;
+    ImageView txtChecked, txtUnchecked;
     String edthoten,edtSDT,edtDiaChi;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.giohang, container , false);
         txtChecked = view.findViewById(R.id.txtChecked);
-        toolbarGioHang = view.findViewById(R.id.toolbarGioHang);
+//        toolbarGioHang = view.findViewById(R.id.toolbarGioHang);
         txtUnchecked = view.findViewById(R.id.txtUnchecked);
         if (savedInstanceState == null){
             gioHangTinhTien fragment = new gioHangTinhTien(txtChecked,txtUnchecked,toolbarGioHang);

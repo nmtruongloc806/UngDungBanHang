@@ -89,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         viewPager = findViewById(R.id.viewpapermain);
         setUpViewpaper();
-        setupBottomNavigation();
         luuData();
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -116,10 +115,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setupBottomNavigation() {
-        bottomNavigationView.setItemTextColor(ContextCompat.getColorStateList(this, R.color.white));
-        bottomNavigationView.setItemIconTintList(ContextCompat.getColorStateList(this, R.color.white));
-    }
 
     @SuppressLint("NewApi")
     @Override
