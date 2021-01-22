@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C3BDBD"
     tools:context=".FragmentDangNhap"
     >
     <!-- TODO: Update blank fragment layout -->
@@ -20,14 +21,17 @@
         android:id="@+id/edtmatkhau"
         android:layout_below="@+id/edtsodienthoai"
         android:hint="Mật Khẩu"/>
+
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edtmatkhau"
-        android:layout_margin="10dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text="Đăng Nhập"
+        android:layout_alignParentBottom="true"
         android:id="@+id/btnDangNhap"
-        android:background="#E11616"
+        android:backgroundTint="#9484E7"
         />
 
 </RelativeLayout>

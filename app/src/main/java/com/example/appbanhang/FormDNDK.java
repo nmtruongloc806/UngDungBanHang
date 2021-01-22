@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 
 import androidx.annotation.Nullable;
@@ -23,6 +24,7 @@ import com.google.android.material.tabs.TabLayout;
 public class FormDNDK extends AppCompatActivity {
     Toolbar toolbar;
     ViewPager viewPager;
+    ImageButton imgBack;
     TabLayout tabLayout;
     PageAdapter pageAdapter;
 
@@ -69,6 +71,7 @@ public class FormDNDK extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpaper);
         //toolbartab = (Toolbar) findViewById(R.id.toolbartab);
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
+        imgBack = (ImageButton) findViewById(R.id.imgBack);
         Intent intent = this.getIntent();
         //toolbar.setNavigationIcon(R.drawable.back_icon);
 
@@ -79,6 +82,13 @@ public class FormDNDK extends AppCompatActivity {
 //                finish();
 //            }
 //        });
+
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         pageAdapter = new PageAdapter(getSupportFragmentManager());
         pageAdapter.addFragment(new FragmentDangNhap(),"Đăng Nhập");

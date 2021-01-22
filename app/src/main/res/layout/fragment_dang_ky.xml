@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C3BDBD"
     tools:context=".FragmentDangKy"
     >
 
@@ -62,11 +63,13 @@
         />
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cbnam"
-        android:layout_margin="10dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
         android:text="Đăng Ký"
         android:id="@+id/btnDangKy"
-        android:background="#E11616"
+        android:backgroundTint="#9484E7"
         />
 </RelativeLayout>
