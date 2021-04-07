@@ -10,11 +10,13 @@
         android:id="@+id/toolbarfavorite"
         app:title="Danh Sách Yêu Thích"
        android:gravity="center"
-        android:background="#f00"/>
+        app:titleTextColor="@color/black"
+        android:background="@color/aqua"/>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/framelayoutFavorite"
+        android:background="@color/aliceblue"
         android:layout_below="@+id/favorite">
     </FrameLayout>
 

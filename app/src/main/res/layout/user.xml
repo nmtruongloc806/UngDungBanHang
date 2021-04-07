@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/aliceblue"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/iconuser"
+        android:background="@color/aqua"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/imgBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/aliceblue"
+            android:src="@drawable/back_icon" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/user"
+            android:layout_margin="15dp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/iconuser"
+        android:id="@+id/ttcn"
+        android:background="@color/aliceblue"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"
+            android:id="@+id/edthoten"
+            android:enabled="false"
+            android:hint="Họ Tên"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/edtsodienthoai"
+            android:inputType="number"
+            android:enabled="false"
+            android:textColor="@color/black"
+            android:layout_below="@+id/edthoten"
+            android:hint="Số Điện Thoại"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/edtdiachi"
+            android:enabled="false"
+            android:layout_below="@id/edtsodienthoai"
+            android:textColor="@color/black"
+            android:hint="Địa Chỉ"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/edtngaysinh"
+            android:enabled="false"
+            android:layout_below="@id/edtdiachi"
+            android:textColor="@color/black"
+            android:focusable="false"
+            android:hint="Ngày Sinh"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtngaysinh"
+            android:id="@+id/cbnam"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:layout_margin="10dp"
+            android:text="Nam"
+            />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtngaysinh"
+            android:id="@+id/cbnu"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:layout_toRightOf="@id/cbnam"
+            android:layout_margin="10dp"
+            android:text="Nữ"
+            />
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/aqua"
+            android:text="Khóa Tài Khoản"
+            android:layout_below="@+id/cbnam"
+            android:id="@+id/btnKhoaTaiKhoan"
+            />
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/aqua"
+            android:text="Mở Tài Khoản"
+            android:layout_toRightOf="@+id/btnKhoaTaiKhoan"
+            android:layout_below="@+id/cbnam"
+            android:id="@+id/btnMoTaiKhoan"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

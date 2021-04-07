@@ -47,23 +47,13 @@ public class GioHangPage extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.giohang, container , false);
         txtChecked = view.findViewById(R.id.txtChecked);
-//        toolbarGioHang = view.findViewById(R.id.toolbarGioHang);
         txtUnchecked = view.findViewById(R.id.txtUnchecked);
         if (savedInstanceState == null){
             gioHangTinhTien fragment = new gioHangTinhTien(txtChecked,txtUnchecked,toolbarGioHang);
             FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.framelayoutGioHang,fragment, "backStateName");
-            fragmentTransaction.addToBackStack("backStateName");
+            fragmentTransaction.add(R.id.framelayoutGioHang,fragment);
             fragmentTransaction.commit();
         }
-        Bundle bundle = this.getArguments();
-        if (bundle != null) {
-            String myString = bundle.getString("key",edthoten);
-            myString  = bundle.getString("key",edtSDT);
-            myString  = bundle.getString("key",edtDiaChi);
-        }
-
-
         return view;
     }
 

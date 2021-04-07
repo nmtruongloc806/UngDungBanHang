@@ -12,7 +12,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -20,6 +19,10 @@
         <activity android:name=".SeachView" />
         <activity android:name=".SanPhamPage" />
         <activity android:name=".chiTietSanPham" />
+        <activity android:name=".FormTTCN" />
+        <activity android:name=".tienDoGiaoHang"/>
+        <activity android:name=".QLND"/>
+        <activity android:name=".chiTietUser"/>
     </application>
 
 </manifest>

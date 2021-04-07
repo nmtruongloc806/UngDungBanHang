@@ -1,5 +1,6 @@
 package com.example.appbanhang;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,10 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,6 +24,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import at.favre.lib.crypto.bcrypt.BCrypt;
 
 public class FragmentDangNhap extends Fragment {
 
@@ -70,8 +75,7 @@ public class FragmentDangNhap extends Fragment {
     public  void isUser(){
         String phone = edtsodienthoai.getText().toString().trim();
         String password = edtmatkhau.getText().toString().trim();
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("taikhoan");
 
         Query checkTenDangNhap = reference.orderByChild("sodienthoai").equalTo(phone);
 
@@ -79,11 +83,10 @@ public class FragmentDangNhap extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()) {
-
                     edtsodienthoai.setError(null);
-
                     String passwordFromDB = snapshot.child(phone).child("matkhau").getValue(String.class);
-                    if (passwordFromDB.equals(password)) {
+                    BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), passwordFromDB);
+                    if (result.verified) {
                         edtsodienthoai.setError(null);
                         String hotenFromDB = snapshot.child(phone).child("hoten").getValue(String.class);
                         String sodienthoaiFromDB = snapshot.child(phone).child("sodienthoai").getValue(String.class);
@@ -91,20 +94,33 @@ public class FragmentDangNhap extends Fragment {
                         String diachiFromDB = snapshot.child(phone).child("diachi").getValue(String.class);
                         String ngaysinhFromDB = snapshot.child(phone).child("ngaysinh").getValue(String.class);
                         String gioitinhFromDB = snapshot.child(phone).child("gioitinh").getValue(String.class);
-                        getActivity().finish();
+                        String tenLoaiFromDB = snapshot.child(phone).child("tenLoai").getValue(String.class);
+                        String ngaythamgiaFromDB = snapshot.child(phone).child("ngaythamgia").getValue(String.class);
+                        boolean hoatdong = snapshot.child(phone).child("hoatdong").getValue(Boolean.class);
                         MainActivity.dadangnhap = true;
-                        Intent intent = new Intent(getActivity(),MainActivity.class);
-                        intent.putExtra("name",hotenFromDB);
-                        Log.d("hichic", "onDataChange: "+hotenFromDB);
-                        intent.putExtra("sodienthoai",sodienthoaiFromDB);
-                        intent.putExtra("matkhau",matkhauFromDB);
-                        intent.putExtra("diachi",diachiFromDB);
-                        intent.putExtra("ngaysinh",ngaysinhFromDB);
-                        intent.putExtra("gioitinh",gioitinhFromDB);
-                        startActivity(intent);
-
-                        Toast.makeText(getContext(),"Đăng Nhập Thành Công",Toast.LENGTH_LONG).show();
-
+                        MainActivity.hoten = hotenFromDB;
+                        MainActivity.sodienthoai = sodienthoaiFromDB;
+                        MainActivity.diachi = diachiFromDB;
+                        MainActivity.ngaysinh = ngaysinhFromDB;
+                        MainActivity.gioitinh = gioitinhFromDB;
+                        MainActivity.tenLoai = tenLoaiFromDB;
+                        MainActivity.ngaythamgia = ngaythamgiaFromDB;
+                        if(hoatdong == true){
+                            Toast.makeText(getContext(),"Đăng Nhập Thành Công",Toast.LENGTH_LONG).show();
+                            getActivity().finish();
+                        }
+                        else {
+                            AlertDialog alertDialog   = new AlertDialog.Builder(getActivity()).create();
+                            alertDialog.setTitle("Thông báo");
+                            alertDialog.setMessage("Tài khoản hiện đã tạm khóa.");
+                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                        }
+                                    });
+                            alertDialog.show();
+                        }
                     }else {
                         edtmatkhau.setError("Wrong Password");
                         edtmatkhau.requestFocus();
@@ -121,4 +137,5 @@ public class FragmentDangNhap extends Fragment {
         });
 
     }
+
 }

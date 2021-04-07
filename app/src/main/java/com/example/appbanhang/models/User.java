@@ -1,4 +1,4 @@
-package com.example.appbanhang;
+package com.example.appbanhang.models;
 
 public class User {
 
@@ -43,32 +43,64 @@ public class User {
         this.ngaysinh = ngaysinh;
     }
 
-    public String isGioitinh() {
-        return gioitinh;
-    }
-
-    public void setGioitinh(String gioitinh) {
-        this.gioitinh = gioitinh;
-    }
-
-
-
-    public User(String hoten, String sodienthoai, String matkhau, String diachi, String ngaysinh, String gioitinh) {
+    public User(String hoten, String sodienthoai, String matkhau, String diachi, String ngaysinh, String gioitinh,String tenLoai,String ngaythamgia,Boolean hoatdong) {
         this.hoten = hoten;
         this.sodienthoai = sodienthoai;
         this.matkhau = matkhau;
         this.diachi = diachi;
         this.ngaysinh = ngaysinh;
         this.gioitinh = gioitinh;
+        this.tenLoai = tenLoai;
+        this.ngaythamgia = ngaythamgia;
+        this.hoatdong = hoatdong;
     }
     public User(){
 
     }
+
+    public String getTenLoai() {
+        return tenLoai;
+    }
+
+    public void setTenLoai(String tenLoai) {
+        this.tenLoai = tenLoai;
+    }
+
+    public String getGioitinh() {
+        return gioitinh;
+    }
+
+
+    public String getNgaythamgia() {
+        return ngaythamgia;
+    }
+
+    public void setNgaythamgia(String ngaythamgia) {
+        this.ngaythamgia = ngaythamgia;
+    }
+
+    public String ngaythamgia;
+    public String tenLoai;
     public String hoten;
     public String sodienthoai;
     public String matkhau;
     public String diachi;
     public String ngaysinh;
+
+
+    public void setGioitinh(String gioitinh) {
+        this.gioitinh = gioitinh;
+    }
+
     public String gioitinh;
 
+    public Boolean getHoatdong() {
+        return hoatdong;
+    }
+
+    public void setHoatdong(Boolean hoatdong) {
+        this.hoatdong = hoatdong;
+    }
+
+    public Boolean hoatdong;
 }

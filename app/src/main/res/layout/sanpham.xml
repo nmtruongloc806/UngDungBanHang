@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/aqua"
+        >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/iconThuongHieu"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/check_icon"
+            android:layout_margin="15dp"
+            />
+        <ImageButton
+            android:id="@+id/imgBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/aliceblue"
+            android:src="@drawable/back_icon" />
+    </RelativeLayout>
     <GridView
         android:id="@+id/grid_view_sanpham"
-        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="#f0f8ff"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:horizontalSpacing="10dp"
-        android:verticalSpacing="10dp"
+        android:horizontalSpacing="15dp"
+        android:verticalSpacing="25dp"
         android:numColumns="2"
         />
 </LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rlImtem">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/user"
+                android:layout_margin="10dp"
+                android:id="@+id/imvuser"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/imvuser"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="5dp"
+                android:textSize="17sp"
+                android:id="@+id/txthoten"
+                android:textColor="@color/black"
+                android:text="Tên người dùng"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/imvuser"
+                android:layout_below="@+id/txthoten"
+                android:id="@+id/txtsodienthoai"
+                android:textSize="13sp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:text="Tên người dùng"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="15dp"
+                android:id="@+id/txtngaythamgia"
+                android:layout_marginRight="10dp"
+                android:text="Ngày tham gia"
+                android:textStyle="italic"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:text="Thời gian"
+                android:layout_below="@+id/txtngaythamgia"
+                android:id="@+id/txtthoigianTG"
+                android:textStyle="italic"
+                />
+        </RelativeLayout>
+</LinearLayout>

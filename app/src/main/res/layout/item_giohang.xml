@@ -1,63 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-  >
-    <CheckBox
-        android:id="@+id/cbgiohang"
-        android:layout_width="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content"/>
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
     <ImageView
-        android:layout_toRightOf="@+id/cbgiohang"
         android:id="@+id/image_hinhgiohang"
-        android:layout_margin="10dp"
-        android:layout_width="wrap_content"
-        android:background="@drawable/truck"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="80dp"/>
+
     <TextView
-        android:layout_toRightOf="@+id/image_hinhgiohang"
         android:id="@+id/txttengiohang"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/image_hinhgiohang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/black"
         android:text="Tên Sản Phẩm"/>
+
     <TextView
-        android:layout_below="@+id/txttengiohang"
         android:id="@+id/txtgiagiohang"
-        android:layout_toRightOf="@+id/image_hinhgiohang"
-        android:layout_marginTop="5dp"
+        android:layout_below="@+id/txttengiohang"
         android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/black"
         android:text="Giá Sản Phẩm"/>
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_below="@+id/cbgiohang"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_toRightOf="@+id/btnsoluong"
         android:id="@+id/btncong"
-        android:text="+"
-        android:layout_margin="5dp"
-        />
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/txtgiagiohang"
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="@color/aqua"
+        android:textColor="@color/black"
+        android:padding="0dp"
+        android:text="+" />
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/cbgiohang"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/btntru"
-        android:layout_toLeftOf="@+id/btnsoluong"
+        android:layout_below="@+id/txtgiagiohang"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/btncong"
+        android:backgroundTint="@color/aqua"
+        android:textColor="@color/black"
+        android:padding="0dp"
         android:text="-"
-        android:layout_margin="5dp"
         />
-    <Button
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1"
-        android:id="@+id/btnsoluong"
-        android:layout_below="@+id/cbgiohang"
-        android:layout_centerInParent="true"
-        android:layout_margin="5dp"
+        android:id="@+id/txtsoluong"
+        android:layout_toRightOf="@+id/btntru"
+        android:layout_below="@+id/txtgiagiohang"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"
+        android:text="số lượng"
         />
+
 </RelativeLayout>

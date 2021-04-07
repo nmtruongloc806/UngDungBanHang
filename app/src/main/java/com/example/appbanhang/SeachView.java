@@ -1,5 +1,6 @@
 package com.example.appbanhang;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -10,9 +11,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -37,25 +41,23 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class SeachView extends AppCompatActivity {
-    Toolbar toolbar;
+    ImageButton imb;
     ListView listView;
     EditText txtSearch;
-    String[] listViewItems;
     DatabaseReference reference;
     ArrayList<String> arrayList = new ArrayList<>();
     ArrayAdapter<String> arrayAdapter;
-    ArrayList<SanPham> sanpham= new ArrayList<SanPham>();
+    ArrayList<SanPham> sanpham = new ArrayList<SanPham>();
     sanPhamAdapter adapter;
     public ArrayList<SanPham> list = new ArrayList<SanPham>();
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.searchview);
-
         listView = findViewById(R.id.listview);
-        toolbar = (Toolbar) findViewById(R.id.tbtoolbar);
-        toolbar.setNavigationIcon(R.drawable.back_icon);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        imb =  findViewById(R.id.imgb);
+        imb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -64,11 +66,11 @@ public class SeachView extends AppCompatActivity {
         Intent intent = getIntent();
         EditText editText = (EditText) findViewById(R.id.txtSearch);
         editText.requestFocus();
-        if(savedInstanceState != null){
-            InputMethodManager imm = (InputMethodManager)   getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (savedInstanceState != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
-        }else {
-            InputMethodManager imm = (InputMethodManager)getSystemService(
+        } else {
+            InputMethodManager imm = (InputMethodManager) getSystemService(
                     Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
         }
@@ -99,6 +101,7 @@ public class SeachView extends AppCompatActivity {
                 arrayAdapter = new ArrayAdapter<String>(SeachView.this, android.R.layout.simple_list_item_1, arrayList);
                 listView.setAdapter(arrayAdapter);
             }
+
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
@@ -120,6 +123,7 @@ public class SeachView extends AppCompatActivity {
             }
         });
     }
+
     public void DataFromFirebaseListener() {
         reference.addValueEventListener(new ValueEventListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -133,8 +137,8 @@ public class SeachView extends AppCompatActivity {
                     int giasp = ds.child("giaSP").getValue(Integer.class);
                     String tenth = ds.child("tenTH").getValue(String.class);
                     String motasp = ds.child("motaSP").getValue(String.class);
-
-
+                    String giaSPStr = ds.child("giaSPStr").getValue(String.class);
+                    int idTH = ds.child("idTH").getValue(Integer.class);
 
                     AtomicBoolean isDaTonTai = new AtomicBoolean(false);
                     sanpham.forEach(sanpham -> {
@@ -143,7 +147,7 @@ public class SeachView extends AppCompatActivity {
                         }
                     });
                     if (isDaTonTai.get() == false) {
-                        SanPham sp = new SanPham(key, tensp, hinhsp, giasp, tenth,motasp);
+                        SanPham sp = new SanPham(key, tensp, hinhsp, giasp, tenth, motasp, idTH, giaSPStr,false, 0,0);
                         if (HomePage.ten.equals(tenth)) {
                             list.add(sp);
                         }
@@ -159,5 +163,17 @@ public class SeachView extends AppCompatActivity {
                 // ...
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getSupportActionBar().hide();
+        if (Build.VERSION.SDK_INT >= 21) {
+            Window window = this.getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(this.getResources().getColor(R.color.aqua));
+        }
     }
 }

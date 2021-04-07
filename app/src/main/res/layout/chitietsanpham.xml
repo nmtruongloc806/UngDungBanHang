@@ -1,34 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/aliceblue"
     android:orientation="vertical">
-    <ImageView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:id="@+id/image_sp"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:background="@color/aqua"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_sp"
+            android:layout_centerInParent="true"
+            android:layout_margin="15dp"
+            />
+        <ImageButton
+            android:id="@+id/imgBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/aliceblue"
+            android:src="@drawable/back_icon" />
+    </RelativeLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txttenSP"
-        android:textSize="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/black"
+        android:textSize="25sp"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtgiaSP"
-        android:textSize="15dp"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="#ff0000"
+        android:textSize="15sp"/>
     <TextView
-        android:layout_margin="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
         android:layout_width="wrap_content"
-        android:textSize="10sp"
+        android:textSize="20sp"
         android:id="@+id/txtmotaSP"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
         />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/aqua"
         android:text="Chọn Mua"
         android:id="@+id/btnthemGioHang"
         />

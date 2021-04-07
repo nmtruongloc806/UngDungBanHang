@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C3BDBD"
+    android:background="@color/aliceblue"
     tools:context=".FragmentDangNhap"
     >
     <!-- TODO: Update blank fragment layout -->
@@ -13,12 +13,15 @@
         android:layout_margin="10dp"
         android:id="@+id/edtsodienthoai"
         android:inputType="number"
+        android:textColor="@color/black"
         android:hint="Số Điện Thoại"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:id="@+id/edtmatkhau"
+        android:textColor="@color/black"
+        android:inputType="textPassword"
         android:layout_below="@+id/edtsodienthoai"
         android:hint="Mật Khẩu"/>
 
@@ -29,9 +32,10 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:text="Đăng Nhập"
+        android:textColor="@color/black"
         android:layout_alignParentBottom="true"
         android:id="@+id/btnDangNhap"
-        android:backgroundTint="@color/purple_button"
+        android:backgroundTint="@color/aqua"
         />
 
 </RelativeLayout>

@@ -14,12 +14,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:paddingLeft="5dp"
             android:id="@+id/edthoten"
             android:hint="Họ Tên"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:paddingLeft="5dp"
             android:id="@+id/edtsodienthoai"
             android:layout_below="@+id/edthoten"
             android:hint="Số Điện Thoại"/>
@@ -27,16 +29,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:paddingLeft="5dp"
             android:id="@+id/edtDiaChi"
             android:layout_below="@id/edtsodienthoai"
             android:hint="Địa Chỉ"/>
         <Button
             android:layout_width="match_parent"
             android:id="@+id/btnHoanTat"
+            android:backgroundTint="@color/aqua"
             android:layout_height="wrap_content"
             android:layout_below="@id/edtDiaChi"
             android:layout_margin="20dp"
             android:text="Hoàn Tất"
+            android:textColor="@color/black"
             android:padding="10dp"/>
     </RelativeLayout>
 

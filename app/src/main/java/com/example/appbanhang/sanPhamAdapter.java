@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class sanPhamAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
-    ArrayList<SanPham> sanPham;
+    public ArrayList<SanPham> sanPham;
     public sanPhamAdapter(Context context, ArrayList<SanPham> sanpham) {
         this.context = context;
         this.sanPham = sanpham;
@@ -45,6 +45,11 @@ public class sanPhamAdapter extends BaseAdapter {
     }
 
     @Override
+    public void notifyDataSetChanged() {
+        super.notifyDataSetChanged();
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         SanPham currentItem = (SanPham) getItem(position);
         if (inflater == null) {
@@ -55,18 +60,30 @@ public class sanPhamAdapter extends BaseAdapter {
         }
         ImageView imageView = convertView.findViewById(R.id.image_sanpham);
         TextView textView = convertView.findViewById(R.id.txttensp);
+        TextView giaTienText = convertView.findViewById(R.id.txtgiatien);
         textView.setText(currentItem.getTenSP());
+        giaTienText.setText(String.valueOf("đ"+currentItem.giaSP));
         ImageButton imageButton = convertView.findViewById(R.id.imgyeuthich);
+        if(currentItem.isYeuThich() == true){
+            imageButton.setImageResource(R.drawable.favorite_icon);
+        }
+        else{
+            imageButton.setImageResource(R.drawable.favorite_border_icon);
+        }
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(MainActivity.checkFavorite == false) {
+                if(currentItem.isYeuThich() == false) {
                     imageButton.setImageResource(R.drawable.favorite_icon);
-                    MainActivity.checkFavorite = true;
+                    currentItem.setYeuThich(true);
+                    MainActivity.listYT.add(currentItem);
                     Toast.makeText(v.getContext(),"Đã Thêm Vào Yêu Thích",Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    MainActivity.checkFavorite = false;
+                    currentItem.setYeuThich(false);
+                    /// khi nó là false -> remove nó khỏi listYT
+                    MainActivity.listYT.remove(currentItem);
+                    notifyDataSetChanged();
                     imageButton.setImageResource(R.drawable.favorite_border_icon);
                     Toast.makeText(v.getContext(),"Xóa Khỏi Yêu Thích",Toast.LENGTH_SHORT).show();
                 }

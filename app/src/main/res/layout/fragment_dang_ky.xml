@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C3BDBD"
+    android:background="@color/aliceblue"
     tools:context=".FragmentDangKy"
     >
 
@@ -13,6 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:id="@+id/edthoten"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:hint="Họ Tên"/>
     <EditText
         android:layout_width="match_parent"
@@ -20,6 +22,8 @@
         android:layout_margin="10dp"
         android:id="@+id/edtsodienthoai"
         android:inputType="number"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:layout_below="@+id/edthoten"
         android:hint="Số Điện Thoại"/>
     <EditText
@@ -27,6 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:id="@+id/edtmatkhau"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:layout_below="@id/edtsodienthoai"
         android:hint="Mật Khẩu"/>
     <EditText
@@ -34,6 +40,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:id="@+id/edtdiachi"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:layout_below="@id/edtmatkhau"
         android:hint="Địa Chỉ"/>
     <EditText
@@ -41,14 +49,18 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:id="@+id/edtngaysinh"
+        android:textColor="@color/black"
         android:layout_below="@id/edtdiachi"
         android:focusable="false"
+        android:textColorHint="@color/black"
         android:hint="Ngày Sinh"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/edtngaysinh"
         android:id="@+id/cbnam"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:layout_margin="10dp"
         android:text="Nam"
         />
@@ -57,6 +69,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edtngaysinh"
         android:id="@+id/cbnu"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         android:layout_toRightOf="@id/cbnam"
         android:layout_margin="10dp"
         android:text="Nữ"
@@ -69,7 +83,8 @@
         android:layout_marginRight="20dp"
         android:layout_alignParentBottom="true"
         android:text="Đăng Ký"
+        android:textColor="@color/black"
         android:id="@+id/btnDangKy"
-        android:backgroundTint="@color/purple_button"
+        android:backgroundTint="@color/aqua"
         />
 </RelativeLayout>

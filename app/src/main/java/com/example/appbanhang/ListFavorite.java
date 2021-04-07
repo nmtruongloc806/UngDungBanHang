@@ -22,16 +22,10 @@ public class ListFavorite extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.listfavorite, container , false);
         gridView = (GridView) view.findViewById(R.id.grid_view_yeuthich);
-        getDataYeuThich();
         adapter = new sanPhamAdapter(getActivity(),MainActivity.listYT);
         gridView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
         return view;
     }
-    public void getDataYeuThich() {
-        if (MainActivity.checkFavorite == true) {
-            SanPham sp = new SanPham(null, MainActivity.TEN, MainActivity.HINH, 0, null, null);
-            MainActivity.listYT.add(sp);
-            MainActivity.checkFavorite = false;
-        }
-    }
+
 }

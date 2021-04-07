@@ -4,48 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#592E2D2D"
+    android:background="@color/aqua"
     android:orientation="vertical"
     tools:context=".FormDNDK">
-    <!--        <com.google.android.material.appbar.AppBarLayout-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:fitsSystemWindows="true"-->
-    <!--            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-    <!--            android:background="#00ffff">-->
-    <!--&lt;!&ndash;            <androidx.appcompat.widget.Toolbar&ndash;&gt;-->
-    <!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
-    <!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
-    <!--&lt;!&ndash;                android:id="@+id/toolbar">&ndash;&gt;-->
-    <!--&lt;!&ndash;                <TextView&ndash;&gt;-->
-    <!--&lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
-    <!--&lt;!&ndash;                    android:textSize="18sp"&ndash;&gt;-->
-    <!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
-    <!--&lt;!&ndash;                    android:text="Đăng Nhập/Đăng Ký"&ndash;&gt;-->
-    <!--&lt;!&ndash;                    android:textColor="#f000"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;            </androidx.appcompat.widget.Toolbar>&ndash;&gt;-->
-    <!--          -->
-    <!--        </com.google.android.material.appbar.AppBarLayout>-->
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ImageButton
             android:id="@+id/imgBack"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/back_icon"
-            android:background="@color/white"
-            />
+            android:layout_marginTop="10dp"
+            android:background="@color/aliceblue"
+            android:src="@drawable/back_icon" />
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerInParent="true"
             android:layout_marginTop="30dp"
-            android:src="@drawable/checked_icon" />
+            android:src="@drawable/check_icon" />
     </RelativeLayout>
 
     <FrameLayout
@@ -59,8 +39,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#00FFFFFF"
-            app:tabIndicatorColor="#9484E7"
-            app:tabTextColor="#FFFFFF">
+            app:tabIndicatorColor="@color/black"
+            app:tabTextColor="@color/black">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="match_parent"

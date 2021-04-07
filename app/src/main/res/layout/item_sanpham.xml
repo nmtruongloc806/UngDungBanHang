@@ -1,32 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="400dp"
+    android:background="@drawable/shadow_shape"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:descendantFocusability="blocksDescendants"
-   >
-    <ImageView
-    android:layout_width="match_parent"
-        android:id="@+id/image_sanpham"
-        android:layout_height="150dp"/>
-    <TextView
-        android:layout_width="wrap_content"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txttensp"
-        android:textSize="15sp"
-       />
-    <ImageButton
-        android:id="@+id/imgyeuthich"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#111"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:background="@null"
-        android:onClick="checkYeuThich"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        app:srcCompat="@drawable/favorite_border_icon"
-        />
-</LinearLayout>
+        android:descendantFocusability="blocksDescendants"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/white"
+            android:id="@+id/image_sanpham"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/image_sanpham"
+            android:id="@+id/kengang"
+            android:background="@color/black"
+            />
+        <ImageButton
+            android:id="@+id/imgyeuthich"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@null"
+            android:onClick="checkYeuThich"
+            android:focusable="false"
+            android:layout_below="@+id/txtgiatien"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:focusableInTouchMode="false"
+            app:srcCompat="@drawable/favorite_border_icon"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txttensp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:layout_below="@id/kengang"
+            android:text="asdahsbdajbs djabsd ajbsd"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtgiatien"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:text="$4,250.00"
+            android:layout_below="@+id/txttensp"
+            android:padding="5dp"
+            />
+    </RelativeLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>

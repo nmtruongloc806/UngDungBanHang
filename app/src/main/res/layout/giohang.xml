@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
+        android:background="@color/aqua"
         >
         <LinearLayout
             android:id="@+id/view_checked"
@@ -29,6 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/txtChecked"
                 android:text="Giỏ hàng"
+                android:textColor="@color/black"
                 />
         </LinearLayout>
 
@@ -64,16 +66,10 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Thông tin"
+                android:textColor="@color/black"
                 />
         </LinearLayout>
-
-
     </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="4dp"
-        android:background="@android:color/darker_gray" />
     <FrameLayout
         android:id="@+id/framelayoutGioHang"
         android:layout_width="match_parent"

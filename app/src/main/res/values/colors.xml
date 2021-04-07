@@ -10,4 +10,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFF</color>
     <color name="grey">#CD917F7F</color>
+    <color name="aqua">#00ffff</color>
+    <color name="aliceblue">#f0f8ff</color>
 </resources>

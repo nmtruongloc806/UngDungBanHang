@@ -2,6 +2,7 @@ package com.example.appbanhang;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -23,13 +25,15 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.appbanhang.models.SanPham;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class gioHangTinhTien extends Fragment {
     Button btnNhapThongTin;
     String haha = "\u2713";
     EditText edtHoten,edtSDT,edtDiaChi;
     ListView lvgh;
-   // ArrayList<SanPham> sanPhams = new ArrayList<SanPham>();
+    TextView txttongtien;
+    public static int tongtien = 0;
     gioHangAdapter gioHangAdapter;
     public ImageView getTxtChecked() {
         return txtChecked;
@@ -55,44 +59,36 @@ public class gioHangTinhTien extends Fragment {
         this.toolbar = toolbar;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.giohangtinhtien,container,false);
+        View view = inflater.inflate(R.layout.giohangtinhtien, container, false);
         btnNhapThongTin = view.findViewById(R.id.btnNhapThongTin);
         lvgh = (ListView) view.findViewById(R.id.listGioHang);
-        getData();
-        gioHangAdapter = new gioHangAdapter(getActivity(),MainActivity.listGH);
+        txttongtien = (TextView) view.findViewById(R.id.txttongtien);
+        gioHangAdapter = new gioHangAdapter(getActivity(), MainActivity.listGH, txttongtien);
         lvgh.setAdapter(gioHangAdapter);
+        MainActivity.listGH.forEach(sanPham -> {
+            tongtien += sanPham.getTongtien();
+            txttongtien.setText("Giá: " + tongtien +" VNĐ");
+        });
+        gioHangAdapter.notifyDataSetChanged();
         btnNhapThongTin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(MainActivity.dadangnhap == true) {
+                if (MainActivity.dadangnhap == true && MainActivity.listGH.size() == 0) {
+                    Toast.makeText(getActivity(), "Giỏ hàng đang trống", Toast.LENGTH_SHORT).show();
+                } else if(MainActivity.dadangnhap == true && MainActivity.listGH.size() > 0){
                     giohangthongtin fragment = new giohangthongtin();
                     FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.framelayoutGioHang, fragment);
-                    fragmentTransaction.addToBackStack("fragment");
+                    fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
                     txtChecked.setBackgroundResource(R.drawable.circle);
-//                    txtChecked.setText(haha);
                     txtUnchecked.setBackgroundResource(R.drawable.circle);
-//                    txtUnchecked.setText("");
-//                    toolbar.setNavigationIcon(R.drawable.back_icon);
-//                    toolbar.setTitle("Thông Tin Mua Hàng");
-//                    toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            getActivity().onBackPressed();
-//                            toolbar.setTitle("Giỏ Hàng");
-//                            toolbar.setNavigationIcon(null);
-//                            txtChecked.setBackgroundResource(R.drawable.circle);
-////                            txtChecked.setText("");
-//                            txtUnchecked.setBackgroundResource(R.drawable.circle2);
-////                            txtUnchecked.setText("");
-//                        }
-//                    });
-                }else{
-                    Intent intent = new Intent(getActivity(),FormDNDK.class);
+                }else {
+                    Intent intent = new Intent(getActivity(), FormDNDK.class);
                     startActivity(intent);
                 }
 
@@ -100,11 +96,12 @@ public class gioHangTinhTien extends Fragment {
         });
         return view;
     }
-    public void getData(){
-        if(MainActivity.themVaoGioHang == true){
-            SanPham sp = new SanPham(null,MainActivity.TEN,MainActivity.HINH,0,null,null);
-            MainActivity.listGH.add(sp);
-            MainActivity.themVaoGioHang = false;
-        }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        txtChecked.setBackgroundResource(R.drawable.circle);
+        txtUnchecked.setBackgroundResource(R.drawable.circle2);
+        tongtien = 0;
     }
 }

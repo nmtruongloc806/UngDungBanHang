@@ -65,11 +65,10 @@ public class HomePage extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               // Toast.makeText(getActivity(),"You clicked" + position,Toast.LENGTH_LONG).show();
-                reference = FirebaseDatabase.getInstance().getReference("thuonghieu");
                 ThuongHieu thuongHieuItem = thuongHieuArrayList.get(position);
-                ten = thuongHieuItem.getTenTH();
-                Intent intent = new Intent(getActivity(),SanPhamPage.class);
+                Intent intent = new Intent(getActivity(), SanPhamPage.class);
+                intent.putExtra("id", thuongHieuItem.ID);
+                intent.putExtra("hinh",thuongHieuItem.HinhTH);
                 startActivity(intent);
             }
 
@@ -84,7 +83,7 @@ public class HomePage extends Fragment {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     // TODO: handle the post
                     String key = ds.getKey();
-                    String hinhTH = ds.child("hinhTH").getValue(String.class);
+                    String hinhTH = ds.child("hinh").getValue(String.class);
                     String tenTH = ds.child("tenTH").getValue(String.class);
                     AtomicBoolean isDaTonTai = new AtomicBoolean(false);
                     thuongHieuArrayList.forEach(thuongHieu -> {

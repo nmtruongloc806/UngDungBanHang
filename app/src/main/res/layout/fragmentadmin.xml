@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/aliceblue"
@@ -50,13 +52,13 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/txtXemTT"
+        android:id="@+id/txtQLDH"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/truck"
-        android:drawableLeft="@drawable/truck"
+        android:drawableStart="@drawable/donmua"
+        android:drawableLeft="@drawable/donmua"
         android:padding="20dp"
-        android:text="Xem tiến độ giao hàng"
+        android:text="Quản lý đơn hàng"
         android:gravity="center_vertical"
         android:textSize="20sp"
         android:drawablePadding="10dp"
@@ -74,24 +76,26 @@
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
         android:padding="20dp"
-        android:text="Thông tin ứng dụng"
+        android:id="@+id/txtQLTK"
+        android:text="Quản lý tài khoản người dùng"
         android:textSize="20sp"
         android:textStyle="bold" />
     <TextView
-        android:id="@+id/txtTTLH"
+        android:id="@+id/txtQLDT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/info_contact"
         android:drawableLeft="@drawable/info_contact"
         android:padding="20dp"
-        android:text="Thông Tin Liên Hệ"
+        android:text="Quản lý doanh thu"
         android:gravity="center_vertical"
         android:textSize="20sp"
         android:drawablePadding="10dp"
         android:textStyle="bold"
         android:drawableEnd="@drawable/next"
         android:drawableRight="@drawable/next"
-        android:background="@color/aqua"/>
+        android:background="@color/aqua"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -102,7 +106,8 @@
         android:drawablePadding="10dp"
         android:gravity="center_vertical"
         android:padding="20dp"
-        android:text="Hỗ Trợ"
+        android:id="@+id/txtCNSP"
+        android:text="Cập nhật sản phẩm"
         android:textSize="20sp"
         android:textStyle="bold" />
     <Button
@@ -113,6 +118,7 @@
         android:textColor="@color/black"
         android:backgroundTint="@color/aqua"
         android:id="@+id/btnDangXuat"
+
         android:text="Đăng Xuất"
         />
 

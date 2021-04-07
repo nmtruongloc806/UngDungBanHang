@@ -23,18 +23,23 @@ public class FavoritePage extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.favorite, container, false);
         toolbar = (Toolbar) view.findViewById(R.id.toolbarfavorite);
-//        if(savedInstanceState == null && MainActivity.checkFavorite == false) {
-//            DanhSachYeuThichTrong Fragment = new DanhSachYeuThichTrong();
-//            FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-//            fragmentTransaction.add(R.id.framelayoutFavorite, Fragment);
-//            fragmentTransaction.commit();
-//        }else {
+        if(MainActivity.listYT.size() == 0) {
+            DanhSachYeuThichTrong Fragment = new DanhSachYeuThichTrong();
+            FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.framelayoutFavorite, Fragment);
+            fragmentTransaction.commit();
+        }
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(MainActivity.listYT.size() > 0) {
             ListFavorite Fragment2 = new ListFavorite();
             FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.framelayoutFavorite, Fragment2);
-            //fragmentTransaction.addToBackStack("backStateName");
             fragmentTransaction.commit();
-        //}
-        return view;
+        }
     }
 }
