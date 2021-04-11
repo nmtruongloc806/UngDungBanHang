@@ -37,109 +37,184 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtxacnhan"
-            android:background="@drawable/smallcircle"
-            android:layout_marginLeft="20dp"
+            android:text="04/11/2000 - 07:00"
             android:layout_marginTop="20dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="|"
-            android:textColor="@color/black"
-            android:layout_below="@+id/txtxacnhan"
-            android:layout_marginLeft="30dp"
-            android:id="@+id/line1.1"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/txtxacnhan"
-            android:text="Đang chờ xác nhận"
-            android:id="@+id/line1.4"
-            android:textColor="@color/black"
-            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/aliceblue"
             android:layout_marginLeft="5dp"
+            android:id="@+id/txtgiotaodon"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtcholayhang"
-            android:layout_below="@+id/line1.1"
+            android:id="@+id/txtCtaodon"
             android:background="@drawable/smallcircle"
-            android:layout_marginLeft="20dp"
-
+            android:layout_toRightOf="@id/txtgiotaodon"
+            android:layout_alignBaseline="@+id/txtgiotaodon"
+            android:layout_marginTop="20dp"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:background="@color/black"
+            android:layout_below="@+id/txtCtaodon"
+            android:layout_toRightOf="@+id/txtgiotaodon"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/txtline1"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/txtcholayhang"
+            android:layout_toRightOf="@+id/txtCtaodon"
+            android:gravity="right"
+            android:layout_marginLeft="10dp"
+            android:layout_alignBaseline="@+id/txtCtaodon"
+            android:text="Tạo đơn"
+            android:id="@+id/txttaodon"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="04/11/2000 - 07:00"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/aliceblue"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@+id/txtgiotaodon"
+            android:id="@+id/txtchoxacnhan"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtCcholayhang"
+            android:layout_below="@+id/txtline1"
+            android:background="@drawable/smallcircle2"
+            android:layout_toRightOf="@+id/txtchoxacnhan"
+            android:layout_alignBaseline="@+id/txtchoxacnhan"
+            android:singleLine="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/txtCcholayhang"
             android:text="Chờ lấy hàng"
-            android:id="@+id/line1.5"
+            android:id="@+id/txtcholayhang"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/black"
-            android:layout_marginTop="58dp"
-            android:layout_marginLeft="5dp"
+            android:layout_alignBaseline="@+id/txtCcholayhang"
+            android:layout_below="@id/txtCtaodon"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="04/11/2000 - 09:00"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/aliceblue"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_below="@+id/txtcholayhang"
-            android:text="|"
-            android:textColor="@color/black"
-            android:id="@+id/line1.2"
-            android:layout_marginLeft="30dp"
-
+            android:id="@+id/txtgiodanggiaohang"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:background="@color/black"
+            android:layout_below="@+id/txtcholayhang"
+            android:layout_toRightOf="@+id/txtgiotaodon"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/txtline2"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtdanggiao"
-            android:layout_below="@+id/line1.2"
-            android:background="@drawable/smallcircle"
-            android:layout_marginLeft="20dp"
+            android:id="@+id/txtCdanggiaohang"
+            android:layout_below="@+id/txtline2"
+            android:background="@drawable/smallcircle2"
+            android:layout_toRightOf="@+id/txtchoxacnhan"
+            android:layout_alignBaseline="@+id/txtgiodanggiaohang"
+            android:singleLine="true"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/txtdanggiao"
-            android:text="Đang giao"
-            android:id="@+id/line1.6"
+            android:layout_toRightOf="@+id/txtCcholayhang"
+            android:text="Đang giao hàng"
+            android:id="@+id/txtdanggiaohang"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/black"
-            android:layout_marginTop="96dp"
+            android:layout_alignBaseline="@+id/txtCdanggiaohang"
+            android:layout_below="@id/txtCtaodon"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:background="@color/black"
+            android:layout_below="@+id/txtgiodanggiaohang"
+            android:layout_toRightOf="@+id/txtgiotaodon"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/txtline3"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="04/11/2000 - 10:00"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
             android:layout_marginLeft="5dp"
+            android:textColor="@color/aliceblue"
+            android:layout_below="@+id/txtdanggiaohang"
+            android:id="@+id/txtgiogiaohangthanhcong"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txtdanggiao"
-            android:text="|"
-            android:id="@+id/line1.3"
+            android:id="@+id/txtCgiaohangthanhcong"
+            android:layout_below="@+id/txtdanggiaohang"
+            android:background="@drawable/smallcircle2"
+            android:layout_toRightOf="@+id/txtchoxacnhan"
+            android:layout_alignBaseline="@+id/txtgiogiaohangthanhcong"
+            android:singleLine="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/txtCcholayhang"
+            android:text="Giao hàng thành công"
+            android:id="@+id/txtgiaohangthanhcong"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/black"
-            android:layout_marginLeft="30dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/line1.3"
-            android:id="@+id/txthoanthanh"
-            android:background="@drawable/smallcircle"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="20dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/txthoanthanh"
-            android:text="Đã nhận được hàng"
-            android:id="@+id/line1.7"
-            android:textColor="@color/black"
-            android:layout_marginTop="134dp"
-            android:layout_marginLeft="5dp"
+            android:layout_alignBaseline="@+id/txtCgiaohangthanhcong"
+            android:layout_below="@id/txtdanggiaohang"
             />
     </RelativeLayout>
-    <FrameLayout
-        android:id="@+id/framelayoutChuaCoDonHang"
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Các sản phẩm đang giao"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:background="@color/aqua"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/framelayoutsanphamdanggiao"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </FrameLayout>
+    </androidx.recyclerview.widget.RecyclerView>
+
 </LinearLayout>

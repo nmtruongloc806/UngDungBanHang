@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,8 @@ public class gioHangTinhTien extends Fragment {
     EditText edtHoten,edtSDT,edtDiaChi;
     ListView lvgh;
     TextView txttongtien;
-    public static int tongtien = 0;
+    private int tongtien = 0;
+    public static int TT;
     gioHangAdapter gioHangAdapter;
     public ImageView getTxtChecked() {
         return txtChecked;
@@ -72,7 +74,9 @@ public class gioHangTinhTien extends Fragment {
         MainActivity.listGH.forEach(sanPham -> {
             tongtien += sanPham.getTongtien();
             txttongtien.setText("Giá: " + tongtien +" VNĐ");
+            TT = tongtien;
         });
+        Log.d("mtp", "onCreateView: "+tongtien);
         gioHangAdapter.notifyDataSetChanged();
         btnNhapThongTin.setOnClickListener(new View.OnClickListener() {
             @Override

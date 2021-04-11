@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.core.Constants;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
@@ -73,61 +74,63 @@ public class FragmentDangNhap extends Fragment {
         }
     }
     public  void isUser(){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("taikhoan");
         String phone = edtsodienthoai.getText().toString().trim();
         String password = edtmatkhau.getText().toString().trim();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("taikhoan");
-
         Query checkTenDangNhap = reference.orderByChild("sodienthoai").equalTo(phone);
 
         checkTenDangNhap.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()) {
-                    edtsodienthoai.setError(null);
-                    String passwordFromDB = snapshot.child(phone).child("matkhau").getValue(String.class);
-                    BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), passwordFromDB);
-                    if (result.verified) {
+                for( DataSnapshot child : snapshot.getChildren() ) {
+                    String childKey = child.getKey();
+                    if(snapshot.child(childKey).exists()) {
                         edtsodienthoai.setError(null);
-                        String hotenFromDB = snapshot.child(phone).child("hoten").getValue(String.class);
-                        String sodienthoaiFromDB = snapshot.child(phone).child("sodienthoai").getValue(String.class);
-                        String matkhauFromDB = snapshot.child(phone).child("matkhau").getValue(String.class);
-                        String diachiFromDB = snapshot.child(phone).child("diachi").getValue(String.class);
-                        String ngaysinhFromDB = snapshot.child(phone).child("ngaysinh").getValue(String.class);
-                        String gioitinhFromDB = snapshot.child(phone).child("gioitinh").getValue(String.class);
-                        String tenLoaiFromDB = snapshot.child(phone).child("tenLoai").getValue(String.class);
-                        String ngaythamgiaFromDB = snapshot.child(phone).child("ngaythamgia").getValue(String.class);
-                        boolean hoatdong = snapshot.child(phone).child("hoatdong").getValue(Boolean.class);
-                        MainActivity.dadangnhap = true;
-                        MainActivity.hoten = hotenFromDB;
-                        MainActivity.sodienthoai = sodienthoaiFromDB;
-                        MainActivity.diachi = diachiFromDB;
-                        MainActivity.ngaysinh = ngaysinhFromDB;
-                        MainActivity.gioitinh = gioitinhFromDB;
-                        MainActivity.tenLoai = tenLoaiFromDB;
-                        MainActivity.ngaythamgia = ngaythamgiaFromDB;
-                        if(hoatdong == true){
-                            Toast.makeText(getContext(),"Đăng Nhập Thành Công",Toast.LENGTH_LONG).show();
-                            getActivity().finish();
+                        String passwordFromDB = snapshot.child(childKey).child("matkhau").getValue(String.class);
+                        BCrypt.Result result = BCrypt.verifyer().verify(password.toCharArray(), passwordFromDB);
+                        if (result.verified) {
+                            edtsodienthoai.setError(null);
+                            String hotenFromDB = snapshot.child(childKey).child("hoten").getValue(String.class);
+                            String sodienthoaiFromDB = snapshot.child(childKey).child("sodienthoai").getValue(String.class);
+                            String key = snapshot.child(childKey).child("id").getValue(String.class);
+                            String diachiFromDB = snapshot.child(childKey).child("diachi").getValue(String.class);
+                            String ngaysinhFromDB = snapshot.child(childKey).child("ngaysinh").getValue(String.class);
+                            String gioitinhFromDB = snapshot.child(childKey).child("gioitinh").getValue(String.class);
+                            String tenLoaiFromDB = snapshot.child(childKey).child("tenLoai").getValue(String.class);
+                            String ngaythamgiaFromDB = snapshot.child(childKey).child("ngaythamgia").getValue(String.class);
+                            boolean hoatdong = snapshot.child(childKey).child("hoatdong").getValue(Boolean.class);
+                            MainActivity.id = key;
+                            MainActivity.dadangnhap = true;
+                            MainActivity.hoten = hotenFromDB;
+                            MainActivity.sodienthoai = sodienthoaiFromDB;
+                            MainActivity.diachi = diachiFromDB;
+                            MainActivity.ngaysinh = ngaysinhFromDB;
+                            MainActivity.gioitinh = gioitinhFromDB;
+                            MainActivity.tenLoai = tenLoaiFromDB;
+                            MainActivity.ngaythamgia = ngaythamgiaFromDB;
+                            if(hoatdong == true){
+                                Toast.makeText(getContext(),"Đăng Nhập Thành Công",Toast.LENGTH_LONG).show();
+                                getActivity().finish();
+                            }
+                            else {
+                                AlertDialog alertDialog   = new AlertDialog.Builder(getActivity()).create();
+                                alertDialog.setTitle("Thông báo");
+                                alertDialog.setMessage("Tài khoản hiện đã tạm khóa.");
+                                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                        new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                dialog.dismiss();
+                                            }
+                                        });
+                                alertDialog.show();
+                            }
+                        }else {
+                            edtmatkhau.setError("Wrong Password");
+                            edtmatkhau.requestFocus();
                         }
-                        else {
-                            AlertDialog alertDialog   = new AlertDialog.Builder(getActivity()).create();
-                            alertDialog.setTitle("Thông báo");
-                            alertDialog.setMessage("Tài khoản hiện đã tạm khóa.");
-                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
-                                    new DialogInterface.OnClickListener() {
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            dialog.dismiss();
-                                        }
-                                    });
-                            alertDialog.show();
-                        }
-                    }else {
-                        edtmatkhau.setError("Wrong Password");
-                        edtmatkhau.requestFocus();
-                    }
                 }else {
-                    edtsodienthoai.setError("No such User exist");
-                    edtsodienthoai.requestFocus();
+                        continue;
+                    }
                 }
             }
             @Override

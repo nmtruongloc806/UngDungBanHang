@@ -67,7 +67,7 @@ public class SanPhamPage extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("TAG", "onItemClick: ");
                 reference = FirebaseDatabase.getInstance().getReference().child("sanpham");
-                SanPham sanPhamItem = MainActivity.list.get(position);
+                SanPham sanPhamItem = list.get(position);
                 tensp = sanPhamItem.getTenSP();
                 MainActivity.TEN = sanPhamItem.getTenSP();
                 MainActivity.HINH = sanPhamItem.getHinhSP();

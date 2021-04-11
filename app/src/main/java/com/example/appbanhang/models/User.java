@@ -43,7 +43,8 @@ public class User {
         this.ngaysinh = ngaysinh;
     }
 
-    public User(String hoten, String sodienthoai, String matkhau, String diachi, String ngaysinh, String gioitinh,String tenLoai,String ngaythamgia,Boolean hoatdong) {
+    public User(String id,String hoten, String sodienthoai, String matkhau, String diachi, String ngaysinh, String gioitinh,String tenLoai,String ngaythamgia,Boolean hoatdong) {
+        this.id = id;
         this.hoten = hoten;
         this.sodienthoai = sodienthoai;
         this.matkhau = matkhau;
@@ -86,6 +87,16 @@ public class User {
     public String matkhau;
     public String diachi;
     public String ngaysinh;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String id;
 
 
     public void setGioitinh(String gioitinh) {

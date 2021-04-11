@@ -42,7 +42,7 @@
             android:id="@+id/txt...."
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="#5E5E5E"
+            android:textColor="@color/black"
             android:paddingBottom="20dp"
             android:layout_centerInParent="true"/>
 

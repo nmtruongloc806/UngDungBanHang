@@ -31,10 +31,9 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     ViewPager viewPager;
-    private int currentApiVersion;
     public static  ArrayList<SanPham> listGH = new ArrayList<>();
     public static  ArrayList<SanPham> listYT = new ArrayList<>();
-    public static ArrayList<SanPham> list = new ArrayList<SanPham>();
+    public static String id;
     public static Boolean dadangnhap = false;
     public static String hoten;
     public static String sodienthoai;
@@ -54,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         viewPager = findViewById(R.id.viewpapermain);
         setUpViewpaper();
-        luuData();
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -113,19 +111,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void luuData(){
-        Intent intent = getIntent();
-        hoten = intent.getStringExtra("name");
-        Log.d("haha", "onCreate: "+hoten);
-        sodienthoai = intent.getStringExtra("sodienthoai");
-        matkhau = intent.getStringExtra("matkhau");
-        diachi = intent.getStringExtra("diachi");
-        ngaysinh = intent.getStringExtra("ngaysinh");
-        gioitinh = intent.getStringExtra("gioitinh");
-        tenLoai = intent.getStringExtra("tenLoai");
-    }
-
     @Override
     protected void onStart() {
         super.onStart();

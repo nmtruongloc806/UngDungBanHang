@@ -17,7 +17,7 @@ public class tienDoGiaoHang extends AppCompatActivity {
         if (savedInstanceState == null){
             FragmentChuaCoDonHang fragment = new FragmentChuaCoDonHang();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.add(R.id.framelayoutChuaCoDonHang,fragment);
+            fragmentTransaction.add(R.id.framelayoutsanphamdanggiao,fragment);
             fragmentTransaction.commit();
         }
     }

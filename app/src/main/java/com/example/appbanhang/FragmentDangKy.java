@@ -106,8 +106,8 @@ public class FragmentDangKy extends Fragment {
                     } else if (cbnu.isChecked()) {
                         gioitinh = cbnu.getText().toString();
                     }
-                    User user = new User(hoten, sodienthoai, bcryptHashString, diachi, ngaysinh, gioitinh,tenLoai,ngaythamgia,true);
-                    reference.child(sodienthoai).setValue(user);
+                    User user = new User(key,hoten, sodienthoai, bcryptHashString, diachi, ngaysinh, gioitinh,tenLoai,ngaythamgia,true);
+                    reference.child(key).setValue(user);
                     Toast.makeText(view.getContext(), "Đăng Ký Thành Công", Toast.LENGTH_LONG).show();
                     getActivity().finish();
                 }
